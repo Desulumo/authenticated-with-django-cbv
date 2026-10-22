@@ -1,0 +1,25 @@
+{% extends 'reg/base.html' %}
+{% block title %}Register | Django Auth{% endblock %}
+{% block content %}
+{% include 'reg/nav.html' %}
+<form method="post">
+    {% csrf_token %}
+<div class="mb-3">
+    <label for="{{ form.username.id_for_label }}" class="form-label">username</label>
+    {{ form.username}}
+    {{ form.username.errors }}
+</div>
+<div class="mb-3">
+    <label for="form.password1.id_for_label" class="form-label">Password</label>
+    {{ form.password1 }}
+    {{form.password1.errors}}
+</div>
+<div class="mb-3">
+    <label for="form.password2.id_for_label" class="form-label">confirm password</label>
+    {{ form.password2 }}
+    {{ form.pasword2.errors }}
+</div>
+<button type="submit" class="btn btn-success w-100">
+        Register
+    </button>
+{% endblock %}

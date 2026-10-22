@@ -1,0 +1,72 @@
+{% extends 'reg/base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+{% include 'reg/nav.html' %}
+
+<div class="container py-5">
+    <h2 class="mb-2">Django Authentication</h2>
+    <p class="text-muted mb-4">
+        Learn how Django handles user authentication using class-based views.
+    </p>
+
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">User Registration</h5>
+                    <p class="card-text">
+                        <strong>CreateView</strong> handles user registration
+                        by displaying a form, validating submitted data,
+                        and saving a new user.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">User Login</h5>
+                    <p class="card-text">
+                        <strong>LoginView</strong> authenticates users
+                        using their credentials and starts an authenticated
+                        session when login succeeds.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">User Logout</h5>
+                    <p class="card-text">
+                        <strong>LogoutView</strong> ends the user's
+                        authenticated session.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h5 class="card-title">TemplateView</h5>
+                    <p class="card-text">
+                        <strong>TemplateView</strong> renders HTML templates
+                        for pages such as the homepage and dashboard.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-light border mt-4">
+        <strong>Remember:</strong>
+        Authentication verifies who a user is, while authorization
+        determines what the user is allowed to access.
+    </div>
+</div>
+{% endblock %}

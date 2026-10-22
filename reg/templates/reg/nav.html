@@ -1,0 +1,39 @@
+{% extends 'reg/base.html' %}
+{% load static %}
+
+{% block content %}
+<nav class="navbar bg-dark">
+    <div class="container-fluid">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'reg/images/logo.jpg' %}"
+                 alt="Logo"
+                 height="40">
+        </a>
+
+        <!-- Navigation links -->
+        <div>
+            {% if user.is_authenticated %}
+                <form method="post" action="{% url 'logout' %}" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit"
+                            class="btn btn-link text-light text-decoration-none">
+                        Logout
+                    </button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}"
+                   class="text-light text-decoration-none me-3">
+                    Login
+                </a>
+                <a href="{% url 'register' %}"
+                   class="text-light text-decoration-none">
+                    Register
+                </a>
+            {% endif %}
+        </div>
+
+    </div>
+</nav>
+{% endblock %}

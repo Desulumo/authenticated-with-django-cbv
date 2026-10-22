@@ -1,0 +1,35 @@
+{% extends 'reg/base.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+{% include 'reg/nav.html' %}
+<form method="post">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" class="form-control"
+               id="username" name="username" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+            <input type="password" class="form-control"
+                   id="password" name="password" required>
+            <button class="btn btn-outline-secondary" type="button"
+                    onclick="togglePassword()">Show</button>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">
+        Login
+    </button>
+</form>
+
+<script>
+    function togglePassword() {
+        const password = document.getElementById("password");
+        password.type = password.type === "password" ? "text" : "password";
+    }
+</script>
+{%endblock %}

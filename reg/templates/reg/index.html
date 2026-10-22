@@ -1,0 +1,53 @@
+{% extends 'reg/base.html' %}
+
+{% block title %}Home | Django Auth{% endblock %}
+
+{% block content %}
+{% include 'reg/nav.html' %}
+
+<div class="container py-5">
+    <h1 class="text-center mb-2">Django Auth</h1>
+    <p class="text-center text-muted mb-4">
+        Simple authentication built with Django.
+    </p>
+
+    <div class="row g-4">
+        <div class="col-12 col-md-6">
+            <div class="card h-100 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Register</h5>
+                    <p class="card-text text-secondary">
+                        New here? Create an account to get started.
+                    </p>
+                    <a href="{% url 'register' %}" class="btn btn-success">Register</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+            <div class="card h-100 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Login</h5>
+                    <p class="card-text text-secondary">
+                        Already have an account? Sign in here.
+                    </p>
+                    <a href="{% url 'login' %}" class="btn btn-success">Login</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h5 class="card-title text-success">Why Django Auth?</h5>
+                    <p class="card-text text-secondary mb-0">
+                        Django provides built-in authentication tools,
+                        secure password hashing, and user account management.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% include 'reg/footer.html' %}
+{% endblock %}
